@@ -9,4 +9,3 @@ def attack(min_damage,max_damage, defence):
 def enemy_attack():
     lose_hp = random.randint(1,5)
     return lose_hp
-
