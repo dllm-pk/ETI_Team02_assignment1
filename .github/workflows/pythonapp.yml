@@ -59,20 +59,38 @@ jobs:
         path: path/to/artifact\\
     
 
-  deploy:
+  deploy:    
+  #test start game function
     runs-on: ubuntu-latest
     steps:
-        
+    -  name: Test new game settings
+       run: |
+           def new_game():
+           game = init_game()
+           game_control(game)               
+         
+    -  name: Test town menu
+       run: |
+           def town_menu_control(game):
+           town_menu()
+           option = get_option(len(TOWN_OPTIONS))
+           TOWN_OPTIONS[option-1](game)
+             
+
+
     - name: Test combat 
       run: |
         def attack(min_damage,max_damage, defence):
           lose_hp = random.randint(min_damage,max_damage) - defence
           return lose_hp
+
     - name: Test flee function
       run: |
            def enemy_attack():
            lose_hp = random.randint(1,5)
            return lose_hp
-          
+
+   
+       
 
    
