@@ -60,7 +60,7 @@ jobs:
     
 
   deploy:    
-  #test start game function
+  #test cases
     runs-on: ubuntu-latest
     steps:
     -  name: Test new game settings
