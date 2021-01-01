@@ -62,6 +62,22 @@ jobs:
    
   #test game function
 
+       
+  build_test_image:
+    title: "Building Test menu test case"
+    type: "build"
+    image_name: "test-menu-test-case"
+    tag: "master"
+    dockerfile: "Dockerfile.testing"
+    stage: test
+    run_integration_tests:
+    title: "Running integration tests"
+    stage: test
+    image: '${{build_test_image}}'
+    commands:
+
+       
+
  
     -  name: Test new game settings
        run: |
@@ -104,6 +120,7 @@ jobs:
            return lose_hp
 
    
+
        
 
    
