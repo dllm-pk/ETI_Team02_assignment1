@@ -59,10 +59,10 @@ jobs:
         path: path/to/artifact\\
     
 
-  deploy:    
-  #test cases
-    runs-on: ubuntu-latest
-    steps:
+   
+  #test game function
+
+ 
     -  name: Test new game settings
        run: |
            def new_game():
