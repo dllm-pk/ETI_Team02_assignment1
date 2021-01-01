@@ -1,4 +1,0 @@
-- name: Deploy to GitHub Pages - Python
-  # You may pin to the exact commit or the version.
-  # uses: JacksonMaxfield/github-pages-deploy-action-python@17d33ff802dccee8cd2c98a5dbd26c3648b4027a
-  uses: JacksonMaxfield/github-pages-deploy-action-python@2.1.0
