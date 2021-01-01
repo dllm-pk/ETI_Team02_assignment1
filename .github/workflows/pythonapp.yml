@@ -60,7 +60,7 @@ jobs:
     
 
    
-  #test start game function
+  #test game function
 
  
     -  name: Test new game settings
