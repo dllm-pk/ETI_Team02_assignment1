@@ -67,7 +67,13 @@ jobs:
        run: |
            def new_game():
            game = init_game()
-           game_control(game)               
+           game_control(game)
+     
+    -  name: Test game control
+       run: |
+            def game_control(game):
+            game[STATE_INDEX]
+
          
     -  name: Test town menu
        run: |
@@ -75,7 +81,14 @@ jobs:
            town_menu()
            option = get_option(len(TOWN_OPTIONS))
            TOWN_OPTIONS[option-1](game)
-             
+
+    - name: Test outdoor menu control
+      run: | 
+           def outdoor_menu_control(game):
+           OUTDOOR_OPTIONS = [view_character, view_map, outdoor_move, exit_outdoor_game]
+           outdoor_menu()
+           option = get_option(len(OUTDOOR_OPTIONS))
+           OUTDOOR_OPTIONS[option-1](game)           
 
 
     - name: Test combat 

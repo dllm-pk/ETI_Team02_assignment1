@@ -95,7 +95,7 @@ Control game function when the hero is at town
     town_menu()
     option = get_option(len(TOWN_OPTIONS))
     TOWN_OPTIONS[option-1](game)
-
+     
 def combat_menu_control(game):
     day = game[DAY_INDEX]
     print("Day " + str(day)+ ": You are out in the open")
