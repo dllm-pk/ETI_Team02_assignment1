@@ -5,6 +5,6 @@
     "\\.github\\workflows",
     "\\__pycache__"
   ],
-  "SelectedNode": "\\.github\\workflows\\pythonapp.yml",
+  "SelectedNode": "\\test_main.py",
   "PreviewInSolutionExplorer": false
 }
