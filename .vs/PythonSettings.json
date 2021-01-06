@@ -3,5 +3,4 @@
   "UnitTestRootDirectory": "testing",
   "UnitTestPattern": "test_*.py",
   "SearchPaths": [ ".\\src" ]
-
 }
