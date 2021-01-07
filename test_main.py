@@ -11,5 +11,5 @@ class test_main(unittest.TestCase) :
         return lose_hp
 
     def test_flee():
-        value=add(b)
-        assert value == result
+        value=input(b)
+        assert value == 'You fled'
