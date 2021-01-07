@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\.github",
-    "\\.github\\workflows",
-    "\\Local settings (.vs)",
+    "\\.pytest_cache",
     "\\__pycache__"
   ],
+  "SelectedNode": "\\full_program.py",
   "PreviewInSolutionExplorer": false
 }

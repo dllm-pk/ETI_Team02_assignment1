@@ -2,5 +2,8 @@
   "TestFramework": "Pytest",
   "UnitTestRootDirectory": "testing",
   "UnitTestPattern": "test_*.py",
-  "SearchPaths": [ ".\\src" ]
+  "SearchPaths": [
+    ".\\src"
+  ],
+  "Interpreter": "Global|PythonCore|3.7"
 }
