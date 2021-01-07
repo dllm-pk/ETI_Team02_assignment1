@@ -1,7 +1,7 @@
-import unittest
+import pytest
 import mainprog
 import combat 
-import pytest
+
 
 class test_main(unittest.TestCase) :
 
