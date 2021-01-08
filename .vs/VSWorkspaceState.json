@@ -2,6 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\.github",
+    "\\.github\\workflows",
     "\\.pytest_cache",
     "\\__pycache__"
   ],

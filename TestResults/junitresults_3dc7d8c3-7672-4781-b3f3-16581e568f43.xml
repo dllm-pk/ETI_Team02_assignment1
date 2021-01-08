@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="2" hostname="LAPTOP-I9NSEBS5" name="pytest" skipped="0" tests="2" time="9.033" timestamp="2021-01-08T11:19:15.746755"><testcase classname="test_combat" file="test_combat.py" line="3" name="test_attack" time="8.911"><failure message="NameError: name 'add' is not defined">@pytest.mark.one
+    def test_attack():
+&gt;           add(1)
+E           NameError: name 'add' is not defined
+
+test_combat.py:6: NameError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test_combat" file="test_combat.py" line="8" name="test_flee" time="0.001"><failure message="NameError: name 'add' is not defined">def test_flee():
+&gt;       add(2)
+E       NameError: name 'add' is not defined
+
+test_combat.py:10: NameError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase></testsuite></testsuites>
