@@ -4,6 +4,7 @@
     "\\.github",
     "\\.github\\workflows",
     "\\.pytest_cache",
+    "\\TestResults",
     "\\__pycache__"
   ],
   "SelectedNode": "\\full_program.py",
