@@ -1,15 +1,19 @@
-import unittest
-import mainprog
-import combat 
 import pytest
+from full_program import *
 
-class test_main(unittest.TestCase) :
+@pytest.mark.parametrize()
+def test_enter_town():
+    TOWN_OPTIONS= int(1)
+    assert "You are in a town"
 
-    @pytest.mark.parameterize()
-    def test_attack(min_damage,max_damage, defence):
-        lose_hp = random.randint(min_damage,max_damage) - defence
-        return lose_hp
+def test_view_character(game):
+    hero = game[HERO_INDEX]
+    
+    assert("The Hero")
+    assert("  Damage:", hero, "-", hero)
+    assert(" Defence:", hero)
+    assert("      HP:", hero)
+      
+       
 
-    def test_flee():
-        value=add(b)
-        assert value == result
+        
