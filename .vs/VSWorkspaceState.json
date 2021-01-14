@@ -1,9 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\.github",
-    "\\.github\\workflows",
-    "\\__pycache__"
+    ""
   ],
   "SelectedNode": "\\test_main.py",
   "PreviewInSolutionExplorer": false
