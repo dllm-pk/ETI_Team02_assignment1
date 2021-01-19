@@ -37,3 +37,24 @@ while combat_mode == True: #Loop for combat menu
         print("Invalid Choice")#Reloads loop, no effect on both enemy and player
 combat_mode = False #Closes loop
 
+#Menu for testing rest (Faris)
+testmenu = True
+while testmenu == True:
+    print("Today is Day " +str(day))
+    a = input("(1) rest (2) combat (0) stop test: ")
+    if a == "1":
+        day += 1
+        if user_hp < 80:
+            user_hp += 20
+            print("You are fully healed.")
+        elif user_hp < 100:
+            user_hp = 100
+            print("You are fully healed.")
+    elif a == "2":
+        enemy()
+    elif a == "0":
+        break
+    else:
+        print("Invalid")
+
+
