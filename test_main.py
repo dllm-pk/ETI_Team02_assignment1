@@ -1,18 +1,17 @@
 import pytest
-from full_program import *
+from mainprog import *
+import random
 
-@pytest.mark.parametrize()
-def test_enter_town():
-    TOWN_OPTIONS= int(1)
-    assert "You are in a town"
+def test_orb():
+    a = random.randint(1,5)
+    b = random.randint(1,5)
+    c = random.randint(1,5)
+    test = [a,b,c]
+    result = orb(a,b,c)
+    original = [i-5 for i in result]
+    assert test == original
 
-def test_view_character(game):
-    hero = game[HERO_INDEX]
-    
-    assert("The Hero")
-    assert("  Damage:", hero, "-", hero)
-    assert(" Defence:", hero)
-    assert("      HP:", hero)
+
       
        
 

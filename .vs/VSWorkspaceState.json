@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\.github",
-    "\\.github\\workflows",
-    "\\.pytest_cache",
-    "\\TestResults",
-    "\\__pycache__"
+    ""
   ],
-  "SelectedNode": "\\test_main.py",
+  "SelectedNode": "\\mainprog.py",
   "PreviewInSolutionExplorer": false
 }
