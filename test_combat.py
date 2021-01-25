@@ -14,8 +14,8 @@ import random
     #assert "You fled"
 
 from combat import *
-def test_playerattack(attack):
-    a = random.randint(5,8) #min dmg
+def test_playerattack():
+    a = random.randint(1,10) #min dmg
     b = random.randint(a+1,a+4) #max dmg
     c = random.randint(1,a) #defence
     value = attack(a,b,c)
