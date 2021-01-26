@@ -14,13 +14,21 @@ import random
     #assert "You fled"
 
 from combat import *
-def test_playerattack():
+def test_playerattack_notzero():
     a = random.randint(1,10) #min dmg
     b = random.randint(a+1,a+4) #max dmg
     c = random.randint(1,a-1) #defence 
     value = attack(a,b,c)
     max = b-c
     min = a-c
-    assert value <= max & value > 0 #Value always lower than max, value never below 0
+    assert value > 0 #Value never below 0
+def test_playerattack_belowmax():
+    a = random.randint(1,10) #min dmg
+    b = random.randint(a+1,a+4) #max dmg
+    c = random.randint(1,a-1) #defence 
+    value = attack(a,b,c)
+    max = b-c
+    min = a-c
+    assert value <= max #Value always lower than max
 
     
