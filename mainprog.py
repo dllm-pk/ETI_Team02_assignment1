@@ -57,6 +57,18 @@ def enemy(min,max,defn,hp,user_hp,maxuserhp,user_defence):
             combat_mode = False
         else:
             print("Invalid Choice")#Reloads loop, no effect on both enemy and player
+        while combat_mode == False:
+            return user_hp
+def rest(day,user_hp,maxuserhp):
+    day = day + 1
+    new_user_hp = 0
+    new_user_hp = user_hp + 20
+    if new_user_hp <= maxuserhp:
+            print("You are fully healed.")
+    elif new_user_hp >= maxuserhp: #Makes sure hp is fully healed
+            new_user_hp = maxuserhp
+            print("You are fully healed.")
+    return [day,new_user_hp]
 
 #Menu for testing rest (Faris)
 testmenu = True
@@ -65,21 +77,21 @@ while testmenu == True:
     print("Your stats. Damage: {0}-{1} HP:{2} Defence {3}".format(min,max,user_hp,user_defence))
     a = input("(1) rest (2) combat (3) Orb of Power (0) stop test: ")
     if a == "1":
-        day += 1
-        if user_hp < maxuserhp:
-            user_hp += 20
-            print("You are fully healed.")
-        elif user_hp < maxuserhp:
-            user_hp = maxuserhp
-            print("You are fully healed.")
+        restresult = rest(day,user_hp,maxuserhp)
+        day = restresult[0]
+        user_hp = restresult[1]
     elif a == "2":
-        enemy(min,max,defn,hp,user_hp,maxuserhp,user_defence)
+        user_hp = enemy(min,max,defn,hp,user_hp,maxuserhp,user_defence)
     elif a == "3":
-        orb(min,max,maxuserhp)
+        orb = orb(min,max,user_defence)
+        min = orb[0]
+        max = orb[1]
+        user_defence = orb[2]
     elif a == "0":
-        break
         testmenu = False
+        break
     else:
-        print("Invalid")
+        print("Invalid Choice")
+
 
 

@@ -4,6 +4,8 @@ import random
 #This value will be the HP lost by the enemy rat
 def attack(min_damage,max_damage, defence):
     lose_hp = random.randint(min_damage,max_damage) - defence
+    if lose_hp <0:
+        lose_hp = 0
     return lose_hp
 #Faris: This is an attack test function as performed by the enemy
 def enemy_attack(user_defence):

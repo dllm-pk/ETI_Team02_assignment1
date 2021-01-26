@@ -17,14 +17,10 @@ from combat import *
 def test_playerattack():
     a = random.randint(1,10) #min dmg
     b = random.randint(a+1,a+4) #max dmg
-    c = random.randint(1,a) #defence
+    c = random.randint(1,a-1) #defence 
     value = attack(a,b,c)
     max = b-c
     min = a-c
-    if value <= max & value >= min:
-        result = True
-    else:
-        result = False
-    assert result == True
+    assert value <= max & value > 0 #Value always lower than max, value never below 0
 
     
