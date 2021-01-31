@@ -1,14 +1,13 @@
 import combat
+from class1 import *
 
-
-def orb(min,max,user_defence):
+def orb(char):
     print("You found the Orb of Power!")
-    min += 5
-    max += 5
-    print("Min = {0}, Max = {1}".format(min,max))
+    min = char.minDamage + 5
+    max = char.maxDamage + 5
     print("Your attack has increased by 5")
     print("Min = {0}, Max = {1}".format(min,max))
-    user_defence += 5
+    user_defence = char.defence + 5
     print("Your defence has increased by 5")
     result = [min,max,user_defence]
     return result
@@ -16,25 +15,29 @@ def orb(min,max,user_defence):
 #Orb of Power (Faris)
 
 
-def enemy(min,max,defn,hp,user_hp,maxuserhp,user_defence):
+def enemy(char, enemy):
     #Menu for combat
     combat_mode = True #Ensures loop functionality
     while combat_mode == True: #Loop for combat menu
-        print("Encounter! - Rat \nDamage: {0} - {1} \nDefence: {2} \nHP: {3} \n\n1) Attack \n2) Run".format(min,max,defn,hp))
+        user_hp = char.hp
+        enemy.toString
         choice = input("Enter Choice: ")#Menu choice
         print(" ")
         if choice == "1":#Attack
-            hit = combat.attack(min,max,defn)#damage to rat
-            print("You deal {} damage to the rat".format(hit))
-            hp = hp - hit
-            if hp <= 0:#rat hp below zero
-                print("The Rat is dead! You are victorious!")
+            if enemy.name == "Rat King":
+                hit = combat.ratkingattack(char, enemy)#damage to rat king
+            else:
+                hit = combat.attack(char,enemy)#damage to rat
+            print("You deal {0} damage to the {1}".format(hit,enemy.name))
+            enemy.hp = enemy.hp - hit
+            if enemy.hp <= 0:#rat hp below zero
+                print("The {} is dead! You are victorious!".format(enemy.name))
                 break#End combat
                 combat_mode = False
             else:
-                tackle = combat.enemy_attack(user_defence)#damage to player
-                print("Ouch! The Rat hit you for {} damage! \n".format(tackle))
-                user_hp = user_hp - tackle
+                hit = combat.enemy_attack(char.defence)#damage to player
+                print("Ouch! The {0} hit you for {1} damage! \n".format(enemy.name,hit))
+                user_hp = user_hp - hit
                 if user_hp <= 0:
                     user_hp = 0#player's HP cant go below 0
                 print("You have {} HP left.".format(user_hp))
@@ -50,16 +53,18 @@ def enemy(min,max,defn,hp,user_hp,maxuserhp,user_defence):
             print("Invalid Choice")#Reloads loop, no effect on both enemy and player
         while combat_mode == False:
             return user_hp
-def rest(day,user_hp,maxuserhp):
+def rest(day, char):
     day = day + 1
-    new_user_hp = 0
-    new_user_hp = user_hp + 20
-    if new_user_hp <= maxuserhp:
+    new_user_hp = char.hp + 20
+    if new_user_hp <= char.maxhp:
             print("You are fully healed.")
-    elif new_user_hp >= maxuserhp: #Makes sure hp is fully healed
-            new_user_hp = maxuserhp
+    elif new_user_hp >= char.maxhp: #Makes sure hp is fully healed
+            new_user_hp = char.maxhp
             print("You are fully healed.")
     return [day,new_user_hp]
+def characterview(char):
+    if char.oop == True:
+                print("You are holding the Orb of Power.")
 
 
 
