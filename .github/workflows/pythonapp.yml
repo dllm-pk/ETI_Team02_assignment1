@@ -38,6 +38,10 @@ jobs:
           assignees: ${{github.actor}}
           labels: workflow-failed
           body: Workflow failed for commit ${{github.sha}} @ ${{github.ref}}
+    - name: Create Documentation
+      run: |
+        python -m pydoc -w ./
+        mv *.html ./documentation
     
     - name: Build and Deploy
       uses: JacksonMaxfield/github-pages-deploy-action-python@2.1.0
@@ -64,10 +68,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         files: report.xml
-    - name: Create Documentation
-      run: |
-        python -m pydoc -w ./
-        mv *.html ./documentation
+    
 
  
 
