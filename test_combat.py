@@ -21,7 +21,7 @@ def test_attack_rat_king_OOP():
     char = characterinfo("The Hero",random.randint(30,50),random.randint(40,60),random.randint(10,20),100,True,100)
     ratking = enemyinfo("Rat King",random.randint(30,50),random.randint(40,60),random.randint(10,20),100,100)
     value = ratkingattack(char,ratking)
-    assert value != 0
+    assert value != 0 
 
 
     

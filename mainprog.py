@@ -2,6 +2,9 @@ import combat
 from class1 import *
 
 def orb(char):
+    """
+    Orb of Power, if found, a list is returned to override the user stats
+    """
     print("You found the Orb of Power!")
     min = char.minDamage + 5
     max = char.maxDamage + 5
@@ -16,6 +19,7 @@ def orb(char):
 
 
 def enemy(char, enemy):
+    defeat_ratking == False
     #Menu for combat
     combat_mode = True #Ensures loop functionality
     while combat_mode == True: #Loop for combat menu
@@ -32,6 +36,8 @@ def enemy(char, enemy):
             enemy.hp = enemy.hp - hit
             if enemy.hp <= 0:#rat hp below zero
                 print("The {} is dead! You are victorious!".format(enemy.name))
+                if enemy.name == "Rat King":
+                    defeat_ratking = True
                 break#End combat
                 combat_mode = False
             else:
@@ -52,17 +58,30 @@ def enemy(char, enemy):
         else:
             print("Invalid Choice")#Reloads loop, no effect on both enemy and player
         while combat_mode == False:
-            return user_hp
+            return [user_hp,defeat_ratking]
 def rest(day, char):
+    """
+    Rest function: A day passes and a list is returned to override day and user HP
+    """
     day = day + 1
     new_user_hp = char.hp + 20
     if new_user_hp <= char.maxhp:
-            print("You are fully healed.")
-    elif new_user_hp >= char.maxhp: #Makes sure hp is fully healed
-            new_user_hp = char.maxhp
-            print("You are fully healed.")
+        """
+        Show that user is healed
+        """
+        print("You are fully healed.")
+    elif new_user_hp > char.maxhp: #Makes sure hp is fully healed
+        """
+        Sets the new user hp to max hp if difference between user hp and max hp is less than tw3nty
+        """
+        new_user_hp = char.maxhp
+        print("You are fully healed.")
     return [day,new_user_hp]
 def characterview(char):
+    """
+    Rest function: A day passes and a list is returned to override day and user HP
+    """
+    char.tostring
     if char.oop == True:
                 print("You are holding the Orb of Power.")
 
