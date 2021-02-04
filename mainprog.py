@@ -19,39 +19,77 @@ def orb(char):
 
 
 def enemy(char, enemy):
+    """
+     Enemy Battle
+     """
+     
     defeat_ratking == False
     #Menu for combat
-    combat_mode = True #Ensures loop functionality
+    combat_mode = True #
+    """
+     Ensures loop functionality, loads menu
+     """
     while combat_mode == True: #Loop for combat menu
         user_hp = char.hp
         enemy.toString
         choice = input("Enter Choice: ")#Menu choice
         print(" ")
-        if choice == "1":#Attack
+        if choice == "1":
+            """
+            Attack
+            """
             if enemy.name == "Rat King":
+                """
+                Attacking Ratking
+                """
                 hit = combat.ratkingattack(char, enemy)#damage to rat king
             else:
+                """
+                Attacking Rat
+                """
                 hit = combat.attack(char,enemy)#damage to rat
             print("You deal {0} damage to the {1}".format(hit,enemy.name))
+            """
+             Hit = hp lost, enemy hp is subtracted
+             """
             enemy.hp = enemy.hp - hit
             if enemy.hp <= 0:#rat hp below zero
+                """
+                Rat dies, end
+                """
                 print("The {} is dead! You are victorious!".format(enemy.name))
                 if enemy.name == "Rat King":
+                    """
+                    If Ratking defeated, override main menu with ending
+                    """
                     defeat_ratking = True
                 break#End combat
                 combat_mode = False
             else:
+
+                """
+                Enemy/Ratking attacks player
+                """
                 hit = combat.enemy_attack(char.defence)#damage to player
                 print("Ouch! The {0} hit you for {1} damage! \n".format(enemy.name,hit))
                 user_hp = user_hp - hit
-                if user_hp <= 0:
+                if user_hp <0:
+                    """
+                    Sets hp to be zero
+                    """
                     user_hp = 0#player's HP cant go below 0
                 print("You have {} HP left.".format(user_hp))
                 if user_hp <= 0:
+                    """
+                    Ends combat as player dies
+                    """
                     print("Your HP is zero. You are dead")
                     break#End combat
                     combat_mode = False
         elif choice == "2":
+            """
+             Run, ends combat
+             """
             print("You run and hide.")
             break#End combat
             combat_mode = False

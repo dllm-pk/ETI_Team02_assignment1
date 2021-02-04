@@ -64,11 +64,19 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         files: report.xml
+
     - name: Create Documentation
       run: |
         python -m pydoc -w ./
         mv *.html ./documentation
-
+    - name: Create Documentation (Manual)
+      run: |
+        python -m pydoc -w menu
+        mv menu.html ./documentation
+        python -m pydoc -w combat
+        mv combat.html ./documentation
+        python -m pydoc -w mainprog
+        mv mainprog.html ./documentation
  
 
        

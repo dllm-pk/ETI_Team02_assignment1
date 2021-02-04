@@ -6,9 +6,9 @@ import random
 """
 Code below help with the creation of the values for the functions
 """
-char = characterinfo("The Hero",random.randint(30,50),random.randint(char.minDamage+10),random.randint(10,20),100,False,100)
-rat = enemyinfo("Rat",random.randint(10,20),random.randint(rat.minDamage+10),random.randint(1,5),100,100)
-ratking = enemyinfo("Rat King",random.randint(30,50),random.randint(ratking.minDamage+10),random.randint(10,20),100,100)
+char = characterinfo("The Hero",random.randint(30,50),char.minDamage+random.randint(5,10),random.randint(10,20),100,False,100)
+rat = enemyinfo("Rat",random.randint(10,20),rat.minDamage+random.randint(5,10),random.randint(1,5),100,100)
+ratking = enemyinfo("Rat King",random.randint(30,50),ratking.minDamage+random.randint(5,10),random.randint(10,20),100,100)
 day = 1
 
 #Menu for testing rest (Faris)
