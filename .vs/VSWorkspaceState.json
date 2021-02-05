@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\.github"
   ],
-  "SelectedNode": "\\full_program.py",
+  "SelectedNode": "\\test_combat.py",
   "PreviewInSolutionExplorer": false
 }

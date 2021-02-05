@@ -22,7 +22,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest pytest-cov
+        pip install flake8 pytest pytest-cov pyinstaller
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
     - name: Testing Game (Pytest)
@@ -38,7 +38,17 @@ jobs:
           assignees: ${{github.actor}}
           labels: workflow-failed
           body: Workflow failed for commit ${{github.sha}} @ ${{github.ref}}
-    
+
+    - name: Generate Python Docs
+      uses: jbheard/markdown-docs@v1
+    - name: Open docs update pull request
+      uses: peter-evans/create-pull-request@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create Executable
+      run: |
+           pyinstaller --onefile menu
+           
     - name: Build and Deploy
       uses: JacksonMaxfield/github-pages-deploy-action-python@2.1.0
       env:
@@ -67,16 +77,12 @@ jobs:
 
     - name: Create Documentation
       run: |
-        python -m pydoc -w ./
+        python -m pydoc -w code
         mv *.html ./documentation
-    - name: Create Documentation (Manual)
+    - name: Create Documentation (Combat)
       run: |
-        python -m pydoc -w menu
-        mv menu.html ./documentation
-        python -m pydoc -w combat
+        python -m pydoc -w ./code/combat
         mv combat.html ./documentation
-        python -m pydoc -w mainprog
-        mv mainprog.html ./documentation
  
 
        
