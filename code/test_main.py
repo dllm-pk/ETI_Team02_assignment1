@@ -4,14 +4,13 @@ from class1 import *
 import random
 
 def test_orb():
-    char = characterinfo("The Hero",random.randint(30,50),random.randint(40,60),random.randint(10,20),100,False,100)
+    char = characterinfo("The Hero",charstat,charstat+random.randint(5,10),random.randint(10,20),100,False,100)
     test = [char.minDamage,char.maxDamage,char.defence]
     result = orb(char)
     original = [i-5 for i in result]
     assert test == original
 
 def test_rest_day_passed():#Checks if the day actually passes
-    char = characterinfo("The Hero",random.randint(30,50),random.randint(40,60),random.randint(10,20),100,False,100)
     day = random.randint(1,10) #Day passing
     result = rest(day,char)
     assert result[0] == day + 1
