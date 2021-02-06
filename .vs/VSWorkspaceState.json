@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.github"
+    "\\.github",
+    "\\code",
+    "\\TestResults"
   ],
-  "SelectedNode": "\\test_combat.py",
+  "SelectedNode": "\\TestResults\\junitresults_041b6b0f-37c0-4cc7-bf91-92d682041511.xml",
   "PreviewInSolutionExplorer": false
 }
