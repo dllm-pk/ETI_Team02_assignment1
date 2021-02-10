@@ -2,9 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\.github",
+    "\\.github\\workflows",
+    "\\build",
+    "\\build\\menu",
     "\\code",
-    "\\TestResults"
+    "\\code\\__pycache__",
+    "\\dist",
+    "\\TestResults",
+    "\\__pycache__"
   ],
-  "SelectedNode": "\\TestResults\\junitresults_041b6b0f-37c0-4cc7-bf91-92d682041511.xml",
+  "SelectedNode": "\\code\\Inte_test_combat_main.py",
   "PreviewInSolutionExplorer": false
 }
