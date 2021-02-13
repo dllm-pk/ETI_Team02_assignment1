@@ -3,11 +3,14 @@
     "",
     "\\.github",
     "\\.github\\workflows",
+    "\\build",
+    "\\build\\menu",
     "\\code",
+    "\\code\\__pycache__",
     "\\dist",
-    "\\docs\\_build",
-    "\\docs\\_build\\html"
+    "\\TestResults",
+    "\\__pycache__"
   ],
-  "SelectedNode": "\\docs",
+  "SelectedNode": "\\code\\Inte_test_combat_main.py",
   "PreviewInSolutionExplorer": false
 }
