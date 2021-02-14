@@ -90,11 +90,18 @@ Control game function when the hero is at town
     '''
     day = game[DAY_INDEX]
     print("Day " + str(day)+ ": You are in a town.")
-    TOWN_OPTIONS = [save_game, exit_new_game]
+    TOWN_OPTIONS = [view_map, town_move, save_game, exit_new_game]
     town_menu()
     option = get_option(len(TOWN_OPTIONS))
     TOWN_OPTIONS[option-1](game)
 
+def outdoor_menu_control(game):
+    day = game[DAY_INDEX]
+    print("Day " + str(day)+ ": You are out in the open")
+    OUTDOOR_OPTIONS = [view_character, view_map, outdoor_move, exit_outdoor_game]
+    outdoor_menu()
+    option = get_option(len(OUTDOOR_OPTIONS))
+    OUTDOOR_OPTIONS[option-1](game)
 
 
 def start():
@@ -152,6 +159,118 @@ def get_new_rat():
     rat= [RAT_MIN_DAMAGE, RAT_MAX_DAMAGE, RAT_DEFENCE, RAT_REST_HP]
     return rat
 
+def get_move():
+    moves = [UP, LEFT, DOWN, RIGHT]
+    
+    while True:
+        s = " "+UP+ " = up; " + LEFT+ " = left; " + DOWN+ " = down; " + RIGHT+ " = right"
+        print(s)
+        prompt="Enter move: "
+        move = input(prompt).upper()
+        if move in moves: return move
+        print("invalid input")
+
+def in_town(game):
+    x = game[X_INDEX]
+    y = game[Y_INDEX]
+    game_map= game[MAP_INDEX]
+    return game_map[x][y] == 1
+
+
+def win_game(game):
+    x = game[X_INDEX]
+    y = game[Y_INDEX]
+    game_map= game[MAP_INDEX]
+    n = len(game_map[0])
+    return x == n-1 and y == n-1   
+
+###################################
+# Game functions
+###################################
+
+def view_character(game):
+    hero = game[HERO_INDEX]
+    print()
+    print("The Hero")
+    print("  Damage:", hero[0], "-", hero[1])
+    print(" Defence:", hero[2])
+    print("      HP:", hero[3])
+    
+def view_map(game):
+    print()
+    game_map = game[MAP_INDEX]
+    x = game[X_INDEX]
+    y = game[Y_INDEX]
+    n = len(game_map[0])
+    s1 = "+"
+    for i in range(n): s1 = s1 + "---+"
+    print(s1)
+    for i in range(n):
+        s2 = "|"
+        for j in range (n):
+            s = ""
+            if game_map[i][j]== 1:
+                s = "T"
+            if i == n-1 and j == n-1:
+                s = "K"
+            if x == i and y == j:
+                if s =="": s = "H"
+                else: s = s+"/H"
+            if len(s) == 0: s = "   "
+            if len(s) == 1: s = " "+s+" "
+            s2 = s2 + s +"|"
+        print(s2)
+        print(s1)
+
+def game_move(game):
+    view_map(game)
+    position = 1
+    x = game[X_INDEX]
+    y = game[Y_INDEX]
+    game_map = game[MAP_INDEX]
+    n = len(game_map [0])
+
+    print()
+    while True:
+        move = get_move()
+        bad = False
+        if move == DOWN:
+            if x == n-1:
+                bad = True
+                print("Cannot move DOWN")
+            else: x = x+1
+        if move == UP:
+            if x == 0:
+                bad = True
+                print("Cannot move UP")
+            else: x = x-1
+        if move == RIGHT:
+            if y == n-1:
+                bad = True
+                print("Cannot move RIGHT")
+            else: y = y+1
+        if move == LEFT:
+            if y == 0:
+                bad = True
+                print("Cannot move :LEFT")
+            else: y = y-1
+        if not bad: break
+    game[X_INDEX] = x
+    game[Y_INDEX] = y
+
+def town_move(game):
+    game_move(game)
+    game[STATE_INDEX] = OUT_DOOR
+    view_map(game)
+    game[DAY_INDEX] = game[DAY_INDEX] + 1
+
+def outdoor_move(game):
+    game_move(game)
+    if in_town(game):
+        game[STATE_INDEX] = IN_TOWN
+    else: game[STATE_INDEX] = OUT_DOOR
+    view_map(game)
+    game[DAY_INDEX] = game[DAY_INDEX] + 1
 
 
 ###################################
@@ -176,9 +295,25 @@ Display the town menu for the Game
     print("""
 Town Menu
 ----------------------
-1) Move
-2) Save Game
-3) Exit Game
+1) View Map
+2) Move
+3) Save Game
+4) Exit Game
+5) Rest
+6) View Character
+""")
+
+def  outdoor_menu():
+    ''' 
+Display the outdoor menu for the Game
+    '''
+    print("""
+Out door Menu
+----------------------
+1) View Character
+2) View Map
+3) Move
+4) Exit Game
 """)
 
 
@@ -250,5 +385,3 @@ if __name__ == "__main__":
     print(__name__)
     start()
     input("Hit return to exit")
-        
-
