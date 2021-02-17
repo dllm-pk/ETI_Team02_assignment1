@@ -3,12 +3,12 @@ This is assignment of team 2 of ETI
 
 Sprint 1: 24th December - 6th January
 Faris: Helped started on planning the Kanban and the functions for the game. Started developing the combat features as a start (excluding Tests) Planned the timeline
-Victor:
+Victor: 
 BC: Incorrectly created the entire game without the use of Devops or CI
 Kenneth:
 Sprint 2: 7th January - 21st January
 Faris: Developed Continuous Integration functions in the YAML file, continued with the development of the app's functions, advised team on using devops
-Victor:
+Victor: Started conducting tests
 BC:
 Kenneth:
 Sprint 3: 22nd January onwards
