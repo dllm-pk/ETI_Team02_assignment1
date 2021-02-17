@@ -80,7 +80,7 @@ while testmenu == True:
                 elif save.upper == "N":
                     saveloop = False
             if saveloop == False:
-                print("Exiting Game")
+                print("Exiting Game.")
                 break
         else:
             break
