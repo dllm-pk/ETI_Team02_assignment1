@@ -13,7 +13,7 @@ BC:
 Kenneth:
 Sprint 3: 22nd January onwards
 Faris: Continued developing code for CI, started doing test cases and speeding up development of game
-Victor:
+Victor:Conducted manual testing of existing game functions. Has assisted in testing and CI
 BC:
 Kenneth:
 
