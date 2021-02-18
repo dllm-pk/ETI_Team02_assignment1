@@ -24,7 +24,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Create Executable
         run: |
-           pyinstaller --onefile menu
+           pyinstaller --onefile code/menu
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create Release
