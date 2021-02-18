@@ -149,7 +149,7 @@ Parameters:
 	upper: upper bound of the range
 Return: An integer in [lower .. (upper-1)].
     '''
-    prompt="Enter choie ["+str(lower)+".."+str(upper)+"]: "
+    prompt="Enter choice ["+str(lower)+".."+str(upper)+"]: "
     while True:
         input_str = input(prompt)
         try:
@@ -408,7 +408,7 @@ def save_game(game):
         game_file.write(x)
         game_file.write("\n")
     game_file.close()
-    print(" Game daved")
+    print(" Game saved")
         
 def resume_game():
     ''' 

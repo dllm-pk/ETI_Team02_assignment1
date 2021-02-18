@@ -3,9 +3,17 @@
     "",
     "\\.github",
     "\\.github\\workflows",
+    "\\build",
+    "\\build\\menu",
     "\\code",
-    "\\dist"
+    "\\code\\__pycache__",
+    "\\TestResults",
+    "\\__pycache__"
   ],
-  "SelectedNode": "\\.github\\workflows\\pythonapp.yml",
+<<<<<<< HEAD
+  "SelectedNode": "\\code\\combat.py",
+=======
+  "SelectedNode": "\\code\\test_map.py",
+>>>>>>> 8a2440357efb81481432b6778c8fb27760ed7f72
   "PreviewInSolutionExplorer": false
 }

@@ -24,10 +24,10 @@ RAT_MAX_DAMAGE = 3
 RAT_DEFENCE = 1
 RAT_REST_HP = 10
 
-UP = "W"
-LEFT = "A"
-DOWN = "S"
-RIGHT = "D"
+W = "W"
+A = "A"
+S = "S"
+D = "D"
 
 IN_TOWN = 0
 OUT_DOOR = 1
@@ -176,9 +176,9 @@ Display the town menu for the Game
     print("""
 Town Menu
 ----------------------
-
-1) Save Game
-2) Exit Game
+1) Move
+2) Save Game
+3) Exit Game
 """)
 
 
