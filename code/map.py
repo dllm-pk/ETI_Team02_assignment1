@@ -49,3 +49,4 @@ def view_map(game):
         print(s1)
 
 view_map(game)
+

@@ -2,10 +2,10 @@ from new_save_exit_game import *
 from map import *
 
 def get_move():
-    moves = [UP, LEFT, DOWN, RIGHT]
+    moves = [W, A, S, D]
     
     while True:
-        s = " "+UP+ " = up; " + LEFT+ " = left; " + DOWN+ " = down; " + RIGHT+ " = right"
+        s = " "+W+ " = up; " + A+ " = left; " + S+ " = down; " + D+ " = right"
         print(s)
         prompt="Enter move: "
         move = input(prompt).upper()
@@ -24,22 +24,22 @@ def game_move(game):
     while True:
         move = get_move()
         bad = False
-        if move == DOWN:
+        if move == S:
             if x == n-1:
                 bad = True
                 print("Cannot move DOWN")
             else: x = x+1
-        if move == UP:
+        if move == W:
             if x == 0:
                 bad = True
                 print("Cannot move UP")
             else: x = x-1
-        if move == RIGHT:
+        if move == D:
             if y == n-1:
                 bad = True
                 print("Cannot move RIGHT")
             else: y = y+1
-        if move == LEFT:
+        if move == A:
             if y == 0:
                 bad = True
                 print("Cannot move :LEFT")
