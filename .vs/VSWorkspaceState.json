@@ -7,10 +7,9 @@
     "\\build\\menu",
     "\\code",
     "\\code\\__pycache__",
-    "\\dist",
     "\\TestResults",
     "\\__pycache__"
   ],
-  "SelectedNode": "\\code\\Inte_test_combat_main.py",
+  "SelectedNode": "\\code\\test_map.py",
   "PreviewInSolutionExplorer": false
 }
