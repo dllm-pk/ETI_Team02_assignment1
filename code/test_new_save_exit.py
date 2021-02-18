@@ -19,7 +19,7 @@ def test_save_game_game_state():#Tests if the correct game state is saved
     day = 1
     x = 0
     y = 0
-    state = 0 # By default game state is 0
+    state = 0 #By default game state is 0
     result = save_game(game)
     assert result[0] == '0'
 
@@ -44,7 +44,7 @@ def test_save_game_day():#Tests if the correct day is saved
     assert result[2] == '1'
 
 def test_save_game_rat_hp():#Tests if the correct rat hp is saved
-    rat_hp = 10 #By rat hp = 10
+    rat_hp = 10 #By default rat hp = 10
     hero_hp = 20
     day = 1
     x = 0
