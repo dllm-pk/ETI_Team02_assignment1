@@ -3,14 +3,9 @@
     "",
     "\\.github",
     "\\.github\\workflows",
-    "\\build",
-    "\\build\\menu",
     "\\code",
-    "\\code\\__pycache__",
-    "\\dist",
-    "\\TestResults",
-    "\\__pycache__"
+    "\\dist"
   ],
-  "SelectedNode": "\\code\\Inte_test_combat_main.py",
+  "SelectedNode": "\\.github\\workflows\\pythonapp.yml",
   "PreviewInSolutionExplorer": false
 }
