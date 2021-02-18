@@ -1,6 +1,7 @@
 from new_save_exit_game import *
 from map import *
 
+#User inputs move
 def get_move():
     moves = [W, A, S, D]
     
@@ -12,6 +13,7 @@ def get_move():
         if move in moves: return move
         print("invalid input")
 
+#Hero moves
 def game_move(game):
     view_map(game)
     position = 1

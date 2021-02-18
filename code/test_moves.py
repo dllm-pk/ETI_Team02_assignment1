@@ -4,30 +4,6 @@ from moves import *
 import pytest
 import random
 
-#def test_move_up_success():
-#    x = 1
-#    result = move_up()
-#    assert result[0] == x-1
-
-#def test_move_up_fail():
-#    x = 0
-#    result = move_up()
-#    assert result[1] == "Cannot move UP"
-
-#def test_move_down_success():
-#    game_map = game[MAP_INDEX]
-#    n = len(game_map [0])
-#    x = 0
-#    x != n-1
-#    result = move_down()
-#    assert result[0] == x+1
-
-#def test_move_down_fail():
-#    game_map = game[MAP_INDEX]
-#    n = len(game_map [0])
-#    x = 8
-#    result = move_down()
-#    assert result[1] == "Cannot move DOWN"
 
 def test_move_up_success():#Tests if moving up returns the correct x coordinate
     x = random.randint(1,7)#Positions on the map where moving up is possible

@@ -4,6 +4,7 @@ x = game[X_INDEX]
 y = game[Y_INDEX]
 msg = ""
 
+#Moves and results
 def move_up_success(x,y):
     view_map(game)
     position = 1
@@ -85,45 +86,4 @@ def move_left_failure(msg):
     print(msg)
     return [msg]
 
-#def move_up():
-#    view_map(game)
-#    position = 1
-#    x = game[X_INDEX]
-#    y = game[Y_INDEX]
-#    game_map = game[MAP_INDEX]
-#    n = len(game_map [0])
-#    print()
-#    msg = ""
-#    bad = False
-#    if x == 0:
-#        bad == True
-#        msg = "Cannot move UP"
-#        print(msg)
-#    else: 
-#        x = x-1
-#        msg = "Moved UP"
-#    return [x, msg]
-#    game[X_INDEX] = x
-#    game[Y_INDEX] = y
 
-
-#def move_down():
-#    view_map(game)
-#    position = 1
-#    x = game[X_INDEX]   
-#    y = game[Y_INDEX]
-#    game_map = game[MAP_INDEX]
-#    n = len(game_map [0])
-#    print()
-#    msg = ""
-#    bad = False
-#    if x == n-1:
-#        bad == True
-#        msg = "Cannot move DOWN"
-#        print(msg)
-#    else: 
-#        x = x+1
-#        msg = "Moved DOWN"
-#    return [x, msg]
-#    game[X_INDEX] = x
-#    game[Y_INDEX] = y

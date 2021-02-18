@@ -21,7 +21,7 @@ DEFAULT_MAP = [
 	[0, 0, 0, 0, 1, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0]
 ]
-
+#Displays map
 def view_map(game):
     print()
     game_map = game[MAP_INDEX]
