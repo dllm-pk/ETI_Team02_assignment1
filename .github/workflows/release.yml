@@ -20,7 +20,7 @@ jobs:
       - name: Package Application
         uses: JackMcKew/pyinstaller-action-windows@main
         with:
-          path: code/new_save_exit_game.py
+          path: code
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create Release
