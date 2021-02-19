@@ -203,6 +203,7 @@ def save_game(game):
         game_file.write("\n")
     game_file.close()
     print(" Game Saved")
+    return(game_data)
         
 def resume_game():
     ''' 
