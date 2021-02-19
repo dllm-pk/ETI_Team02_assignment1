@@ -64,7 +64,10 @@ while testmenu == True:
         View Character (Faris)
         """
         characterview(char)
-    elif a == "0":
+   
+
+
+    elif a == "5":
         """
         Ends menu (Faris), exits game
         """

@@ -1,15 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.github",
-    "\\.github\\workflows",
+    "\\.pytest_cache",
     "\\build",
-    "\\build\\menu",
+    "\\build\\code",
     "\\code",
     "\\code\\__pycache__",
+    "\\docs",
+    "\\docs\\_build",
+    "\\docs\\_build\\html",
     "\\TestResults",
     "\\__pycache__"
   ],
-  "SelectedNode": "\\code\\test_map.py",
+  "SelectedNode": "\\code\\menu.py",
   "PreviewInSolutionExplorer": false
 }
